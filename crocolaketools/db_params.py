@@ -2,13 +2,13 @@
 
 ## @file db_params.py
 #
-#
+## Adapted by @author Kalea Holdren <kalea.holdren@whoi.edu>
 ## Adapted by @author Mahi Sarwar Anol <anol.mahi@gmail.com> 
 #
 ## Everything is Adapted from params.py in crocolakeloader (https://github.com/boom-lab/crocolakeloader.git)
 #  Originally written by @author enrico <enrico.milanese@whoi.edu>
 #
-## @date sunday 15 June, 2026
+## @date Monday 4 August 2026
 
 ##########################################################################
 import copy
@@ -470,68 +470,49 @@ params["CROCOLAKE_BGC_ALL"] = [
 # original names of parameters to keep
 
 params["GLODAP"] = [
-    'G2year',
-    'G2month',
-    'G2day',
-    'G2hour',
-    'G2minute',
-    'G2latitude',
-    'G2longitude',
-    'G2pressure',
-    'G2temperature',
-    'G2salinity',
-    'G2oxygen',
-    'G2nitrate',
-    'G2silicate',
-    'G2phosphate',
-    'G2tco2',
-    'G2talk',
-    'G2phtsinsitutp',
-    'G2cfc11',
-    'G2cfc12',
-    'G2cfc113',
-    'G2ccl4',
-    'G2sf6',
-    'G2chla',
+    'year', 'month', 'day', 'hour', 'minute',
+    'latitude', 'longitude', 'pressure', 'temperature', 'salinity',
+    'oxygen', 'nitrate', 'silicate', 'phosphate', 'tco2', 'talk',
+    'phtsinsitutp', 'cfc11', 'cfc12', 'cfc113', 'ccl4', 'sf6', 'chla',
 ]
 
 #
 # dict for renaming parameters to crocolake names
 #
 params["GLODAP2CROCOLAKE"] = {
-    'G2expocode' : 'PLATFORM_NUMBER',
-    'G2latitude' : 'LATITUDE',
-    'G2longitude' : 'LONGITUDE',
-    'G2pressure' : 'PRES',
-    'G2temperature' : 'TEMP',
-    'G2salinity' : 'PSAL',
-    'G2oxygen' : 'DOXY',
-    'G2nitrate' : 'NITRATE',
-    'G2silicate' : 'SILICATE',
-    'G2phosphate' : 'PHOSPHATE',
-    'G2tco2' : 'TCO2',
-    'G2talk' : 'TOT_ALKALINITY',
-    'G2phtsinsitutp' : 'PH_IN_SITU_TOTAL',
-    'G2cfc11' : 'CFC11',
-    'G2cfc12' : 'CFC12',
-    'G2cfc113' : 'CFC113',
-    'G2ccl4' : 'CCL4',
-    'G2sf6' : 'SF6',
-    'G2chla' : 'CHLA',
-    'G2salinityf' : 'PSAL_QC',
-    'G2oxygenf' : 'DOXY_QC',
-    'G2nitratef' : 'NITRATE_QC',
-    'G2silicatef' : 'SILICATE_QC',
-    'G2phosphatef' : 'PHOSPHATE_QC',
-    'G2tco2f' : 'TCO2_QC',
-    'G2talkf' : 'TOT_ALKALINITY_QC',
-    'G2phtsinsitutpf' : 'PH_IN_SITU_TOTAL_QC',
-    'G2cfc11f' : 'CFC11_QC',
-    'G2cfc12f' : 'CFC12_QC',
-    'G2cfc113f' : 'CFC113_QC',
-    'G2ccl4f' : 'CCL4_QC',
-    'G2sf6f' : 'SF6_QC',
-    'G2chlaf' : 'CHLA_QC',
+    'expocode' : 'PLATFORM_NUMBER',
+    'latitude' : 'LATITUDE',
+    'longitude' : 'LONGITUDE',
+    'pressure' : 'PRES',
+    'temperature' : 'TEMP',
+    'salinity' : 'PSAL',
+    'oxygen' : 'DOXY',
+    'nitrate' : 'NITRATE',
+    'silicate' : 'SILICATE',
+    'phosphate' : 'PHOSPHATE',
+    'tco2' : 'TCO2',
+    'talk' : 'TOT_ALKALINITY',
+    'phtsinsitutp' : 'PH_IN_SITU_TOTAL',
+    'cfc11' : 'CFC11',
+    'cfc12' : 'CFC12',
+    'cfc113' : 'CFC113',
+    'ccl4' : 'CCL4',
+    'sf6' : 'SF6',
+    'chla' : 'CHLA',
+    'salinityf' : 'PSAL_QC',
+    'oxygenf' : 'DOXY_QC',
+    'nitratef' : 'NITRATE_QC',
+    'silicatef' : 'SILICATE_QC',
+    'phosphatef' : 'PHOSPHATE_QC',
+    'tco2f' : 'TCO2_QC',
+    'talkf' : 'TOT_ALKALINITY_QC',
+    'phtsinsitutpf' : 'PH_IN_SITU_TOTAL_QC',
+    'cfc11f' : 'CFC11_QC',
+    'cfc12f' : 'CFC12_QC',
+    'cfc113f' : 'CFC113_QC',
+    'ccl4f' : 'CCL4_QC',
+    'sf6f' : 'SF6_QC',
+    'chlaf' : 'CHLA_QC',
     'profile_nb' : 'CYCLE_NUMBER', # temporary name for profile ID, this is
                                    # created in the converter, it is not in the
                                    # original csv file
@@ -769,6 +750,91 @@ params["OleanderXBT2CROCOLAKE"] = {
     'temp' : 'TEMP',
 }
 
+#------------------------------------------------------------------------------#
+# SPOTS
+#
+# original names of parameters to keep
+
+params["SPOTS"] = [
+    'TimeSeriesSite',
+    'DATE',
+    'TIME',
+    'LATITUDE',
+    'LONGITUDE',
+    'CTDPRS',
+    'CTDTMP',
+    'CTDSAL',
+    'SALNTY',
+    'OXYGEN',
+    'NITRAT',
+    'PHSPHT',
+    'SILCAT',
+    'ALKALI',
+    'PH_TOT',
+    'SALNTY_P',
+    'SALNTY_A',
+    'SALNTY_FLAG_W',
+    'CTDSAL_FLAG_W',
+    'OXYGEN_P',
+    'OXYGEN_A',
+    'OXYGEN_FLAG_W',
+    'NITRAT_P',
+    'NITRAT_A',
+    'NITRAT_FLAG_W',
+    'PHSPHT_P',
+    'PHSPHT_A',
+    'PHSPHT_FLAG_W',
+    'SILCAT_P',
+    'SILCAT_A',
+    'SILCAT_FLAG_W',
+    'ALKALI_P',
+    'ALKALI_A',
+    'ALKALI_FLAG_W',
+    'PH_TOT_P',
+    'PH_TOT_A',
+    'PH_TOT_FLAG_W',
+]
+
+#
+# dict for renaming parameters to crocolake names
+#
+params["SPOTS2CROCOLAKE"] = {
+    'TimeSeriesSite' : 'PLATFORM_NUMBER',
+    'LATITUDE' : 'LATITUDE',
+    'LONGITUDE' : 'LONGITUDE',
+    'CTDPRS' : 'PRES',
+    'CTDTMP' : 'TEMP',
+    'PSAL' : 'PSAL',
+    'OXYGEN' : 'DOXY',
+    'NITRAT' : 'NITRATE',
+    'SILCAT' : 'SILICATE',
+    'PHSPHT' : 'PHOSPHATE',
+    'ALKALI' : 'TOT_ALKALINITY',
+    'PH_TOT' : 'PH_IN_SITU_TOTAL',
+    'PSAL_QC' : 'PSAL_QC',
+    'OXYGEN_FLAG_W' : 'DOXY_QC',
+    'NITRAT_FLAG_W' : 'NITRATE_QC',
+    'SILCAT_FLAG_W' : 'SILICATE_QC',
+    'PHSPHT_FLAG_W' : 'PHOSPHATE_QC',
+    'ALKALI_FLAG_W' : 'TOT_ALKALINITY_QC',
+    'PH_TOT_FLAG_W' : 'PH_IN_SITU_TOTAL_QC',
+    'PSAL_ERROR' : 'PSAL_ERROR',
+    'OXYGEN_ERROR' : 'DOXY_ERROR',
+    'NITRAT_ERROR' : 'NITRATE_ERROR',
+    'SILCAT_ERROR' : 'SILICATE_ERROR',
+    'PHSPHT_ERROR' : 'PHOSPHATE_ERROR',
+    'ALKALI_ERROR' : 'TOT_ALKALINITY_ERROR',
+    'PH_TOT_ERROR' : 'PH_IN_SITU_TOTAL_ERROR',
+    
+    'profile_nb' : 'CYCLE_NUMBER', # temporary name for profile ID, this is 
+                                   # created in the converter, it is not in the
+                                   # original csv file
+    'date_update' : 'DATE_UPDATE', # temporary name for date update
+}
+
+params["CROCOLAKE2SPOTS"] = {
+    value: key for key, value in params["SPOTS2CROCOLAKE"].items()
+}
 
 #------------------------------------------------------------------------------#
 # Argo
